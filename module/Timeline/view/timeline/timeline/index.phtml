@@ -1,0 +1,47 @@
+ <?php
+ // module/Timeline/view/timeline/timeline/index.phtml:
+
+ $title = 'List of My timelines';
+ $this->headTitle($title);
+ ?>
+ 
+ <h1><?php echo $this->escapeHtml($title); ?></h1>
+ 
+     <a href="<?php echo $this->url('timeline', array('action'=>'add'));?>">Add new timeline</a>
+
+        <table class="table">
+        <tr align="justify">                   
+                 <th><?php echo $this->translate('Start Date') ?></th>
+                 <th><?php echo $this->translate('End Date') ?></th>
+                 <th><?php echo $this->translate('headline') ?></th>
+                 <th><?php echo $this->translate('Text') ?></th>
+                 <th><?php echo $this->translate('Media') ?></th>
+                 <th><?php echo $this->translate('Media Credit') ?></th>
+                 <th><?php echo $this->translate('Media') ?></th>
+                 <th><?php echo $this->translate('Media Caption') ?></th>
+                 <th><?php echo $this->translate('Media Thumbnail') ?></th>
+                 <th><?php echo $this->translate('Type') ?></th>
+                 <th><?php echo $this->translate('Tag ID') ?></th>
+                 <th>&nbsp;</th>
+        </tr>       
+    <?php foreach ($timelines as $timeline) : ?>
+        <tr align="justify">
+                <td><?php echo $this->escapeHtml($timeline->start_date);?></td>
+                <td><?php echo $this->escapeHtml($timeline->end_date);?></td>
+                <td><?php echo $this->escapeHtml($timeline->headline);?></td>
+                <td><?php echo $this->escapeHtml($timeline->text);?></td>
+                <td><?php echo $this->escapeHtml($timeline->media);?></td>
+                <td><?php echo $this->escapeHtml($timeline->media_credit);?></td>
+                <td><?php echo $this->escapeHtml($timeline->media_caption);?></td>
+                <td><?php echo $this->escapeHtml($timeline->media_thumbnail);?></td>
+                <td><?php echo $this->escapeHtml($timeline->type);?></td>
+                <td><?php echo $this->escapeHtml($timeline->tag_id_tag);?></td>
+                <td>
+                    <a href="<?php echo $this->url('timeline',
+                        array('action'=>'edit', 'id' => $timeline->id_timeline));?>">Edit</a>
+                    <a href="<?php echo $this->url('timeline',
+                        array('action'=>'delete', 'id' => $timeline->id_timeline));?>">Delete</a>
+               </td>
+            </tr>
+    <?php endforeach; ?>
+</table>

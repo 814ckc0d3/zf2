@@ -1,0 +1,33 @@
+ <?php
+ // module/Timeline/view/timeline/timeline/edit.phtml:
+
+ $title = 'Edit timeline';
+ $this->headTitle($title);
+ ?>
+ <h1><?php echo $this->escapeHtml($title); ?></h1>
+
+ <?php
+ $form = $this->form;
+ $form->setAttribute('action', $this->url(
+     'timeline',
+     array(
+         'action' => 'edit',
+         'id'     => $this->id_timeline,
+     )
+ ));
+ $form->prepare();
+
+ echo $this->form()->openTag($form);
+ echo $this->formHidden($form->get('id_timeline'));
+ echo $this->formRow($form->get('start_date'));
+ echo $this->formRow($form->get('end_date'));;
+ echo $this->formRow($form->get('headline'));
+ echo $this->formRow($form->get('text'));
+ echo $this->formRow($form->get('media'));
+ echo $this->formRow($form->get('media_credit'));
+ echo $this->formRow($form->get('media_caption'));
+ echo $this->formRow($form->get('media_thumbnail'));
+ echo $this->formRow($form->get('type'));
+ echo $this->formRow($form->get('tag_id_tag'));
+ echo $this->formSubmit($form->get('submit'));
+ echo $this->form()->closeTag();
