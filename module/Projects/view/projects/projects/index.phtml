@@ -1,0 +1,27 @@
+
+ <div class="jumbotron">
+    <h1><?php echo sprintf($this->translate('%sMy Projects%s'), '<span class="zf-green">', '</span>') ?></h1>
+    <p><?php echo sprintf($this->translate('My I+D Projects')) ?></p>
+</div>
+<div class="col_md_4">
+	<table class="table">
+		<tr>
+     		<th>Title</th>
+     		<th>Description</th>
+     		<th>&nbsp;</th>
+ 		</tr>
+		<?php foreach ($projects as $project) : ?>
+ 		<tr>
+     		<td><?php echo $this->escapeHtml($project->title);?></td>
+     		<td><?php echo $this->escapeHtml($project->description);?></td>
+     		<td align="right">
+         		<a class="btn btn-warning" href="<?php echo $this->url('projects',
+             		array('action'=>'edit', 'id' => $project->id));?>">Edit</a>
+         		<a class="btn btn-danger" href="<?php echo $this->url('projects',
+             		array('action'=>'delete', 'id' => $project->id));?>">Delete</a>
+     		</td>
+ 		</tr>
+ 		<?php endforeach; ?>
+ 	</table>
+ 	<p><a class="btn btn-success btn-lg" href="<?php echo $this->url('projects', array('action'=>'add'));?>" target="_blank"><?php echo $this->translate('Add new project') ?> &raquo;</a></p>
+</div>

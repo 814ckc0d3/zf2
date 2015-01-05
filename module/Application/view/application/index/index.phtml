@@ -1,19 +1,54 @@
-<div class="jumbotron">
-    <h1><?php echo sprintf($this->translate('Welcome to %sZend Framework 2%s'), '<span class="zf-green">', '</span>') ?></h1>
-    <p><?php echo sprintf($this->translate('Congratulations! You have successfully installed the %sZF2 Skeleton Application%s. You are currently running Zend Framework version %s. This skeleton can serve as a simple starting point for you to begin building your application on ZF2.'), '<a href="https://github.com/zendframework/ZendSkeletonApplication" target="_blank">', '</a>', \Zend\Version\Version::VERSION) ?></p>
-    <p><a class="btn btn-success btn-lg" href="https://github.com/zendframework/zf2" target="_blank"><?php echo $this->translate('Fork Zend Framework 2 on GitHub') ?> &raquo;</a></p>
-</div>
+<nav class="navbar">
+            <div class="container">
+                <div class="navbar-header">
+                    <img src="<?php echo $this->basePath('img/apps-logo.png') ?>" alt="ABC Developer Knowledge"/>&nbsp;
+                </div>
+            </div>
+        </nav>
 
 <div class="row">
 
     <div class="col-md-4">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title"><?php echo $this->translate('Follow Development') ?></h3>
+                <h3 class="panel-title"><?php echo $this->translate('SysAdmin & PHP developer') ?></h3>
             </div>
-            <div class="panel-body">
-                <p><?php echo sprintf($this->translate('Zend Framework 2 is under active development. If you are interested in following the development of ZF2, there is a special ZF2 portal on the official Zend Framework website which provides links to the ZF2 %swiki%s, %sdev blog%s, %sissue tracker%s, and much more. This is a great resource for staying up to date with the latest developments!'), '<a href="http://framework.zend.com/wiki/display/ZFDEV2/Home">', '</a>', '<a href="http://framework.zend.com/zf2/blog">', '</a>', '<a href="https://github.com/zendframework/zf2/issues">', '</a>') ?></p>
-                <p><a class="btn btn-success pull-right" href="http://framework.zend.com/zf2" target="_blank"><?php echo $this->translate('ZF2 Development Portal') ?> &raquo;</a></p>
+            <div class="panel-body" align="center">
+			    <p>
+			    	<img src="<?php echo $this->basePath('img/foto.jpg') ?>" alt="ABC"/>&nbsp;
+			    </p>
+			    <p>
+		        	<a class="btn" target="_blank" href="https://www.linkedin.com/profile/view?id=378862513">
+	        			<img src="<?php echo $this->basePath('img/linkedin.png') ?>" alt="LinkedIn"/>&nbsp;
+        			</a>
+        			<a class="btn" target="_blank" href="https://github.com/814ckc0d3/">
+            			<img src="<?php echo $this->basePath('img/github.png') ?>" alt="github"/>&nbsp;
+        			</a>
+        			<a class="btn" target="_blank" href="https://twitter.com/814ck_c0d3">
+            			<img src="<?php echo $this->basePath('img/twitter.png') ?>" alt="Twitter"/>&nbsp;
+        			</a>
+        			<a class="btn" target="_blank" href="">
+            			<img src="<?php echo $this->basePath('img/google.png') ?>"/>&nbsp;
+        			</a>
+    			</p>
+             </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><?php echo $this->translate('Oracle Technologies') ?></h3>
+            </div>
+            <div class="panel-body" align="left">
+            <img src="<?php echo $this->basePath('img/oracle-uni.png') ?>" alt="Oracle University"/>&nbsp;
+            </div>
+            <div class="panel-body" align="right">
+                <p><?php echo $this->translate('Oracle ID: OC1349879‎') ?></p>
+                <p><?php echo $this->translate('OCA Oracle Weblogic Server 11g') ?></p>
+                <p><?php echo $this->translate('OCP Oracle Database 11g') ?></p>
+                <p><?php echo $this->translate('MySQL Server 5.6') ?></p>
+            </ul>
             </div>
         </div>
     </div>
@@ -21,23 +56,16 @@
     <div class="col-md-4">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title"><?php echo $this->translate('Discover Modules') ?></h3>
+                <h3 class="panel-title"><?php echo $this->translate('Zend Technologies') ?></h3>
             </div>
-            <div class="panel-body">
-                <p><?php echo sprintf($this->translate('The community is working on developing a community site to serve as a repository and gallery for ZF2 modules. The project is available %son GitHub%s. The site is currently live and currently contains a list of some of the modules already available for ZF2.'), '<a href="https://github.com/zendframework/modules.zendframework.com">', '</a>') ?></p>
-                <p><a class="btn btn-success pull-right" href="http://modules.zendframework.com/" target="_blank"><?php echo $this->translate('Explore ZF2 Modules') ?> &raquo;</a></p>
-            </div>
-        </div>
-    </div>
 
-    <div class="col-md-4">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title"><?php echo $this->translate('Help &amp; Support') ?></h3>
+            <div class="panel-body" align="left">
+            	<img src="<?php echo $this->basePath('img/zend-logo.png') ?>" alt="Twitter"/>&nbsp;
             </div>
-            <div class="panel-body">
-                <p><?php echo sprintf($this->translate('If you need any help or support while developing with ZF2, you may reach us via IRC: %s#zftalk on Freenode%s. We\'d love to hear any questions or feedback you may have regarding the beta releases. Alternatively, you may subscribe and post questions to the %smailing lists%s.'), '<a href="irc://irc.freenode.net/zftalk">', '</a>', '<a href="http://framework.zend.com/wiki/display/ZFDEV/Mailing+Lists">', '</a>') ?></p>
-                <p><a class="btn btn-success pull-right" href="http://webchat.freenode.net?channels=zftalk" target="_blank"><?php echo $this->translate('Ping us on IRC') ?> &raquo;</a></p>
+            <div class="panel-body" align="right">
+                <p><?php echo $this->translate('Zend ID: ZEND026644') ?></p>
+                <p><?php echo $this->translate('Zend PHP 5.3 Enginner') ?></p>
+                <p><?php echo $this->translate('Zend Framework 2') ?></p>
             </div>
         </div>
     </div>
