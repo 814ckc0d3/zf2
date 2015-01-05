@@ -1,5 +1,4 @@
 <?php
-
 return array(
 		
     'controllers' => array(
@@ -23,13 +22,18 @@ return array(
                         'controller' => 'Album\Controller\Album',
                         'action'     => 'index',
                     ),
-                	'active'=>true,
                 ),
             ),
         ),
     ),
-    
-    'view_manager' => array(
+
+	'view_manager' => array(
+ 		'template_map' => array(
+			'album/index'			  => __DIR__ . '/../view/album/album/index.phtml',
+ 			'album/add'			  	  => __DIR__ . '/../view/album/album/add.phtml',
+ 			'album/delete'			  => __DIR__ . '/../view/album/album/delete.phtml',
+ 			'album/edit'			  => __DIR__ . '/../view/album/album/edit.phtml',
+   		),
         'template_path_stack' => array(
             'album' => __DIR__ . '/../view',
         ),
