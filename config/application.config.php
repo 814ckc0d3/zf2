@@ -3,7 +3,7 @@ return array(
     'modules' => //$modules,
 		array(
         'Application',
-        'Album',                  // <-- Add this line
+        'Contact',                  // <-- Add this line
         'Timeline',
 		'Projects',
     ),

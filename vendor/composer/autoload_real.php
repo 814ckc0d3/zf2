@@ -5,7 +5,7 @@
 class ComposerAutoloaderInitbe98fa5c384274d77f2f2ea952c844f9
 {
     private static $loader;
-
+	
     public static function loadClassLoader($class)
     {
         if ('Composer\Autoload\ClassLoader' === $class) {

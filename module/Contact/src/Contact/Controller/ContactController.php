@@ -1,39 +1,38 @@
 <?php
-namespace Album\Controller;
+namespace Contact\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
-use Album\Model\Album;          
-use Album\Form\AlbumForm;
+use Contact\Model\Contact;          
+use Contact\Form\ContactForm;
 
-class AlbumController extends AbstractActionController
+class ContactController extends AbstractActionController
 {
-    protected $albumTable;
+    protected $contactTable;
     
     public function indexAction()
     {
         return new ViewModel(array(
-            'albums' => $this->getAlbumTable()->fetchAll(),
+            'contacts' => $this->getContactTable()->fetchAll(),
         ));
     }
 
     public function addAction()
     {
-        $form = new AlbumForm();
+        $form = new ContactForm();
         $form->get('submit')->setValue('Add');
         
         $request = $this->getRequest();
         if ($request->isPost()) {
-            $album = new Album();
-            $form->setInputFilter($album->getInputFilter());
+            $contact = new Contact();
+            $form->setInputFilter($contact->getInputFilter());
             $form->setData($request->getPost());
         
             if ($form->isValid()) {
-                $album->exchangeArray($form->getData());
-                $this->getAlbumTable()->saveAlbum($album);
+                $contact->exchangeArray($form->getData());
+                $this->getContactTable()->saveContact($contact);
         
-                // Redirect to list of albums
-                return $this->redirect()->toRoute('album');
+                return $this->redirect()->toRoute('contact');
             }
         }
         return array('form' => $form);
@@ -43,24 +42,22 @@ class AlbumController extends AbstractActionController
     {
         $id = (int) $this->params()->fromRoute('id', 0);
         if (!$id) {
-            return $this->redirect()->toRoute('album', array(
+            return $this->redirect()->toRoute('contact', array(
                 'action' => 'add'
             ));
         }
-        
-        // Get the Album with the specified id.  An exception is thrown
-        // if it cannot be found, in which case go to the index page.
+
         try {
-            $album = $this->getAlbumTable()->getAlbum($id);
+            $contact = $this->getContactTable()->getContact($id);
         }
         catch (\Exception $ex) {
-            return $this->redirect()->toRoute('album', array(
+            return $this->redirect()->toRoute('contact', array(
                 'action' => 'index'
             ));
         }
         
-        $form  = new AlbumForm();
-        $form->bind($album);
+        $form  = new ContactForm();
+        $form->bind($contact);
         $form->get('submit')->setAttribute('value', 'Edit');
         
         $request = $this->getRequest();
@@ -69,10 +66,9 @@ class AlbumController extends AbstractActionController
             $form->setData($request->getPost());
         
             if ($form->isValid()) {
-                $this->getAlbumTable()->saveAlbum($album);
-        
-                // Redirect to list of albums
-                return $this->redirect()->toRoute('album');
+                $this->getContactTable()->saveContact(contact);
+                
+                return $this->redirect()->toRoute('contact');
             }
         }
         
@@ -86,7 +82,7 @@ class AlbumController extends AbstractActionController
     {
         $id = (int) $this->params()->fromRoute('id', 0);
         if (!$id) {
-            return $this->redirect()->toRoute('album');
+            return $this->redirect()->toRoute('contact');
         }
         
         $request = $this->getRequest();
@@ -95,26 +91,25 @@ class AlbumController extends AbstractActionController
         
             if ($del == 'Yes') {
                 $id = (int) $request->getPost('id');
-                $this->getAlbumTable()->deleteAlbum($id);
+                $this->getContactTable()->deleteContact($id);
             }
-        
-            // Redirect to list of albums
-            return $this->redirect()->toRoute('album');
+                 
+            return $this->redirect()->toRoute('contact');
         }
         
         return array(
             'id'    => $id,
-            'album' => $this->getAlbumTable()->getAlbum($id)
+            'contact' => $this->getContactTable()->getContact($id)
         );
     }
     
-    // module/Album/src/Album/Controller/AlbumController.php:
-    public function getAlbumTable()
+
+    public function getContactTable()
     {
-        if (!$this->albumTable) {
+        if (!$this->contactTable) {
             $sm = $this->getServiceLocator();
-            $this->albumTable = $sm->get('Album\Model\AlbumTable');
+            $this->contactTable = $sm->get('Contact\Model\ContactTable');
         }
-        return $this->albumTable;
+        return $this->contactTable;
     }
 }

@@ -1,9 +1,9 @@
 <?php
-namespace Album\Model;
+namespace Contact\Model;
 
 use Zend\Db\TableGateway\TableGateway;
 
-class AlbumTable
+class ContactTable
 {
     protected $tableGateway;
 
@@ -18,7 +18,7 @@ class AlbumTable
         return $resultSet;
     }
 
-    public function getAlbum($id)
+    public function getContact($id)
     {
         $id  = (int) $id;
         $rowset = $this->tableGateway->select(array('id' => $id));
@@ -29,18 +29,22 @@ class AlbumTable
         return $row;
     }
 
-    public function saveAlbum(Album $album)
+    public function saveContact(Contact $contact)
     {
         $data = array(
-            'artist' => $album->artist,
-            'title'  => $album->title,
+            'name' => $album->name,
+            'surname'  => $album->surname,
+        	'mail' => $album->artist,
+        	'social' => $album->artist,
+        	'residence' => $album->artist
+        	
         );
 
-        $id = (int) $album->id;
+        $id = (int) $contact->id;
         if ($id == 0) {
             $this->tableGateway->insert($data);
         } else {
-            if ($this->getAlbum($id)) {
+            if ($this->getContact($id)) {
                 $this->tableGateway->update($data, array('id' => $id));
             } else {
                 throw new \Exception('Album id does not exist');
@@ -48,7 +52,7 @@ class AlbumTable
         }
     }
 
-    public function deleteAlbum($id)
+    public function deleteContact($id)
     {
         $this->tableGateway->delete(array('id' => (int) $id));
     }

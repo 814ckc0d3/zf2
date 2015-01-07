@@ -21,10 +21,10 @@ if (file_exists('vendor/autoload.php')) {
     $loader = include 'vendor/autoload.php';
 }
 
-$zf2Path = false;
+//$zf2Path = false;
 
-if (is_dir('vendor/ZF2/library')) {
-    $zf2Path = __DIR__.'/vendor/ZF2/library';
+if (is_dir('vendor/zenframework/zendframewor/library')) {
+    $zf2Path = __DIR__.'/vendor/zenframework/zendframewor/library';
 } elseif (getenv('ZF2_PATH')) {      // Support for ZF2_PATH environment variable or git submodule
     $zf2Path = getenv('ZF2_PATH');
 } elseif (function_exists('zend_deployment_library_path') && zend_deployment_library_path ('Zend Framework 2')) {

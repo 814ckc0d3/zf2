@@ -1,0 +1,21 @@
+
+ <div class="jumbotron">
+    <h1><?php echo sprintf($this->translate('%sMy Contact%s'), '<span class="zf-green">', '</span>') ?></h1>
+    <p><a class="btn btn-success btn-lg" href="<?php //echo $this->url('contact', array('action'=>'add'));?>" target="_blank"><?php echo $this->translate('Add new contact') ?> &raquo;</a></p>
+</div>
+<div class="col_md_4">
+		<?php foreach ($contacts as $contact) : ?>
+     			<?php echo $this->escapeHtml($contact->name);?>
+     			<?php echo $this->escapeHtml($contact->surname);?>
+     			<?php echo $this->escapeHtml($contact->mail);?>
+     			<?php echo $this->escapeHtml($contact->social);?>
+				<?php echo $this->escapeHtml($contact->residence);?>
+   			
+         		<a href="<?php echo $this->url('contact',
+             		array('action'=>'edit', 'id' => $contact->id));?>">Edit</a>
+         		<a href="<?php echo $this->url('contact',
+             		array('action'=>'delete', 'id' => $contact->id));?>">Delete</a>
+     		</td>
+ 		</tr>
+ 		<?php endforeach; ?>
+</div>

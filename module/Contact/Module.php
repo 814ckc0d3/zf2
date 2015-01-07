@@ -1,9 +1,8 @@
 <?php
-namespace Album;
+namespace Contact;
 
-// Add these import statements:
-use Album\Model\Album;
-use Album\Model\AlbumTable;
+use Contact\Model\Contact;
+use Contact\Model\ContactTable;
 use Zend\Db\ResultSet\ResultSet;
 use Zend\Db\TableGateway\TableGateway;
 
@@ -36,16 +35,16 @@ class Module implements AutoloaderProviderInterface, ConfigProviderInterface
     {
         return array(
             'factories' => array(
-                'Album\Model\AlbumTable' =>  function($sm) {
-                    $tableGateway = $sm->get('AlbumTableGateway');
-                    $table = new AlbumTable($tableGateway);
+                'Contact\Model\ContactTable' =>  function($sm) {
+                    $tableGateway = $sm->get('ContactTableGateway');
+                    $table = new ContactTable($tableGateway);
                     return $table;
                 },
-                'AlbumTableGateway' => function ($sm) {
+                'ContactTableGateway' => function ($sm) {
                     $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
                     $resultSetPrototype = new ResultSet();
-                    $resultSetPrototype->setArrayObjectPrototype(new Album());
-                    return new TableGateway('album', $dbAdapter, null, $resultSetPrototype);
+                    $resultSetPrototype->setArrayObjectPrototype(new Contact());
+                    return new TableGateway('contact', $dbAdapter, null, $resultSetPrototype);
                 },
             ),
         );

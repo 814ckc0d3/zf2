@@ -3,23 +3,23 @@ return array(
 		
     'controllers' => array(
         'invokables' => array(
-            'Album\Controller\Album' => 'Album\Controller\AlbumController',
+            'Contact\Controller\Contact' => 'Contact\Controller\ContactController',
         ),
     ),
     
     // The following section is new and should be added to your file
     'router' => array(
         'routes' => array(
-            'album' => array(
+            'contact' => array(
                 'type'    => 'segment',
                 'options' => array(
-                    'route'    => '/album[/][:action][/:id]',
+                    'route'    => '/contact[/][:action][/:id]',
                     'constraints' => array(
                         'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
                         'id'     => '[0-9]+',
                     ),
                     'defaults' => array(
-                        'controller' => 'Album\Controller\Album',
+                        'controller' => 'Contact\Controller\Contact',
                         'action'     => 'index',
                     ),
                 ),
@@ -29,13 +29,13 @@ return array(
 
 	'view_manager' => array(
  		'template_map' => array(
-			'album/index'			  => __DIR__ . '/../view/album/album/index.phtml',
- 			'album/add'			  	  => __DIR__ . '/../view/album/album/add.phtml',
- 			'album/delete'			  => __DIR__ . '/../view/album/album/delete.phtml',
- 			'album/edit'			  => __DIR__ . '/../view/album/album/edit.phtml',
+			'contact/index'			  => __DIR__ . '/../view/contact/contact/index.phtml',
+ 			'contact/add'			  	  => __DIR__ . '/../view/contact/contact/add.phtml',
+ 			'contact/delete'			  => __DIR__ . '/../view/contact/contact/delete.phtml',
+ 			'contact/edit'			  => __DIR__ . '/../view/contact/contact/edit.phtml',
    		),
         'template_path_stack' => array(
-            'album' => __DIR__ . '/../view',
+            'contact' => __DIR__ . '/../view',
         ),
     ),
 );
