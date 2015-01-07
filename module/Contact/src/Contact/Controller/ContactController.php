@@ -62,7 +62,7 @@ class ContactController extends AbstractActionController
         
         $request = $this->getRequest();
         if ($request->isPost()) {
-            $form->setInputFilter($album->getInputFilter());
+            $form->setInputFilter($contact->getInputFilter());
             $form->setData($request->getPost());
         
             if ($form->isValid()) {

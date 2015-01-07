@@ -44,6 +44,7 @@ class Contact
                 ),
             	'validators' => array(
             		'options' => array(
+            			'name'    => 'StringLength',
             			'encoding' => 'UTF-8',
             			'min'      => 1,
             			'max'      => 11,

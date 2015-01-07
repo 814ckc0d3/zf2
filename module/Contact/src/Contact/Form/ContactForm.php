@@ -29,7 +29,7 @@ class ContactForm extends Form
         ));
         $this->add(array(
         		'name' => 'mail',
-        		'type' => 'Email',
+        		'type' => 'Text',
         		'options' => array(
         				'label' => 'E-mail',
         		),

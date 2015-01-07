@@ -21,7 +21,8 @@
  echo $this->formHidden($form->get('id'));
  echo $this->formRow($form->get('name'));
  echo $this->formRow($form->get('surname'));
- echo $this->formSubmit($form->get('mail'));
- echo $this->formSubmit($form->get('social'));
- echo $this->formSubmit($form->get('residence'));
+ echo $this->formRow($form->get('mail'));
+ echo $this->formRow($form->get('social'));
+ echo $this->formRow($form->get('residence'));
+ echo $this->formSubmit($form->get('submit'));
  echo $this->form()->closeTag();
