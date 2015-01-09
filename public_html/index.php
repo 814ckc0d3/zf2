@@ -28,4 +28,3 @@ if ($_SERVER['APPLICATION_ENV'] == 'development') {
 
  // Run the application!
  Zend\Mvc\Application::init(require 'config/application.config.php')->run(); 
- 
