@@ -55,7 +55,10 @@ return array(
         ),
     ),
     'service_manager' => array(
-        'abstract_factories' => array(
+    	'factories' => array(
+    		'navigation' => 'Zend\Navigation\Service\DefaultNavigationFactory',
+    	),
+    	'abstract_factories' => array(
             'Zend\Cache\Service\StorageCacheAbstractServiceFactory',
             'Zend\Log\LoggerAbstractServiceFactory',
         ),
@@ -89,6 +92,7 @@ return array(
             'application/index/index' => __DIR__ . '/../view/application/index/index.phtml',
             'error/404'               => __DIR__ . '/../view/error/404.phtml',
             'error/index'             => __DIR__ . '/../view/error/index.phtml',
+        	'partials/menu'			  => __DIR__ . '/../view/parials/menu.phtml',
         ),
         'template_path_stack' => array(
             __DIR__ . '/../view',
@@ -101,4 +105,12 @@ return array(
             ),
         ),
     ),
+	'navigation' => array(
+		'default' => array(
+			array(
+				'label' => 'Home',
+				'route' =>'application',
+			),
+		),
+	),
 );
