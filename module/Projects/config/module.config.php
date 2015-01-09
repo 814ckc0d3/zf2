@@ -37,5 +37,35 @@ return array(
         'template_path_stack' => array(
             'projects' => __DIR__ . '/../view',
         ),
+		'navigation' => array(
+			'default' => array(
+				array(
+					'label' => 'Projects',
+					'route' => 'projects',
+					'pages' => array(
+						array(
+							'label' => 'Index',
+							'route' => 'projects',
+							'action' => 'index',
+						),
+						array(
+							'label' => 'Add',
+							'route' => 'projects',
+							'action'	=> 'add',
+						),
+						array(
+							'label' => 'Edit',
+							'route' => 'projects',
+							'action' => 'edit',
+						),
+						array(
+							'label' => 'Delete',
+							'route' => 'projects',
+							'action' => 'delete',
+						),
+					),
+				),
+			),
+		),
     ),
 );
