@@ -37,22 +37,31 @@ echo $this->doctype();
                 <div class="navbar-header">              
                     <a class="navbar-brand" href="<?php echo $this->url('home') ?>"><img src="<?php echo $this->basePath('img/abc-ico.png') ?>" alt="ABC Developer"/><?php echo $this->translate('Antonio Blasco Cerrada') ?></a>               
                 </div>
-                <div class="collapse navbar-collapse">              	
+                <div class="collapse navbar-collapse navbar-ex1-collapse">              	
                     <ul class="nav navbar-nav">
-                    	<li class="btn">
-                        	<a href="<?php echo $this->url('projects') ?>"><?php echo $this->translate('Projects') ?></a>
+                    	<li class="btn">                    		
+                        	<a href="<?php echo $this->url('projects') ?>">
+                        		<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                        		<?php echo $this->translate('Projects') ?>
+                        	</a>
                         </li>
                         <li class="btn">
-                        	<a href="<?php echo $this->url('timeline') ?>"><?php echo $this->translate('Timeline') ?></a>
+                        	<a href="<?php echo $this->url('timeline') ?>">
+               		         	<span class="glyphicon glyphicon-road" aria-hidden="true"></span>
+               		         	<?php echo $this->translate('Timeline') ?>
+                        	</a>
                         </li>
                         <li class="btn">
-                        	<a href="<?php echo $this->url('contact') ?>"><?php echo $this->translate('Contact') ?></a>
-                        </li>                                                        	
+                        	<a href="<?php echo $this->url('contact') ?>">
+                        		<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                        		<?php echo $this->translate('Contact') ?>
+                        	</a>
+                        </li>                                                    	
                    	</ul>
-                </div>
+                   	<?php include_once 'partials/menu.phtml'?>
+                </div> 
             </div>
-        </nav>
-        	<?php include_once 'partials/menu.phtml'?>		
+        </nav>		
        	<div class="container">
             <?php echo $this->content; ?>
         </div>
