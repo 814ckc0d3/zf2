@@ -1,9 +1,9 @@
 <?php 
 return array(
-    'modules' => //$modules,
+    'modules' =>
 		array(
         'Application',
-        'Contact',                  // <-- Add this line
+        'Contact',
         'Timeline',
 		'Projects',
     ),
@@ -17,4 +17,3 @@ return array(
         ),
     ),
 );
-?>
